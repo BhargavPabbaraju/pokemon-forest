@@ -1,13 +1,10 @@
-:root {
-  --pot-bg-1: #e8b038;
-  --pot-bg-2: #f8d060;
-}
-
 #content {
-  display: grid;
-  grid-template-rows: 1fr 7fr 3fr;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 64px;
+  align-items: center;
+  padding: 3rem;
+  gap: 3rem;
 }
 
 .main-top {
@@ -20,16 +17,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .main-bottom {
-  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.berry-container {
+  position: relative;
 }
 
 .main-berry {
   width: 288px;
-  padding: 16px;
   /* border-color: var(--pot-bg-2);
   background-color: var(--pot-bg-1);
   border: 2px solid var(--pot-bg-2); */
@@ -39,8 +42,8 @@
 .main-tree {
   width: 132px;
   position: absolute;
-  top: -12px;
-  left: 56px;
+  left: 44px;
+  top: -32px;
 }
 
 img {
@@ -50,4 +53,21 @@ img {
   image-rendering: crisp-edges;
   /* Chromium + Safari */
   image-rendering: pixelated;
+}
+
+.main-timer {
+  font-size: 8rem;
+  padding: 1rem;
+  color: var(--foreground-3);
+}
+
+#plant-button {
+  padding: 0.5rem 0.25rem;
+  font-size: 1.2rem;
+  width: 50%;
+  background: var(--light-green-0);
+  color: var(--foreground-2);
+  border: none;
+  border-bottom: 0.25rem solid var(--dark-green-0);
+  border-radius: 0.5rem;
 }

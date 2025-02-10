@@ -1,9 +1,12 @@
+import "../variables.css";
 import "./index.css";
 import berryPotImg from "../../assets/berry_pot.png";
 import treeImg from "../../assets/tree2.apng";
+import { formatTime } from "../utils";
 
 const DEFAULT_TAG = "Study";
 const DEFAULT_STATUS = "Plant a berry";
+const DEFAULT_TIME = 10 * 60; // 10 minutes → 600 seconds
 
 function renderTop() {
   const top = document.createElement("div");
@@ -18,6 +21,7 @@ function renderTop() {
 
 function renderBerryPot() {
   const div = document.createElement("div");
+  div.classList.add("berry-container");
 
   const berry = document.createElement("img");
   berry.src = berryPotImg;
@@ -55,9 +59,15 @@ function renderBottom() {
   div.classList.add("main-bottom");
 
   const time = document.createElement("div");
+  time.innerText = formatTime(DEFAULT_TIME);
   time.classList.add("main-timer");
 
+  const plantButton = document.createElement("button");
+  plantButton.setAttribute("id", "plant-button");
+  plantButton.innerText = "Plant";
+
   div.appendChild(time);
+  div.appendChild(plantButton);
 
   return div;
 }

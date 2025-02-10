@@ -8,6 +8,7 @@
 - Push notifications upon success, failure
 - Be able to change theme of the app ??? 
 
+- Show cancel button within 10 seconds and crack/wither after that.
 
 
 # Plant berries 

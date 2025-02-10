@@ -12,8 +12,8 @@
 
 body {
   font-size: large;
-  display: grid;
-  grid-template-rows: 1fr 8fr 1fr;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   background: var(--bg-green-0);
 }
@@ -36,4 +36,19 @@ header {
   padding: 8px;
   font-size: large;
   max-height: 32px;
+}
+
+footer {
+  background-color: var(--dark-green-0);
+  color: var(--foreground-3);
+  padding: 8px;
+  font-size: large;
+  max-height: 32px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.content {
+  height: 100%;
 }
