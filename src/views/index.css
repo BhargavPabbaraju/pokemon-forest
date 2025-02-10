@@ -1,0 +1,53 @@
+:root {
+  --pot-bg-1: #e8b038;
+  --pot-bg-2: #f8d060;
+}
+
+#content {
+  display: grid;
+  grid-template-rows: 1fr 7fr 3fr;
+  justify-content: center;
+  gap: 64px;
+}
+
+.main-top {
+  background-color: antiquewhite;
+  display: flex;
+}
+
+.main-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main-bottom {
+  background-color: aquamarine;
+}
+
+.main-berry {
+  width: 288px;
+  padding: 16px;
+  /* border-color: var(--pot-bg-2);
+  background-color: var(--pot-bg-1);
+  border: 2px solid var(--pot-bg-2); */
+  position: relative;
+}
+
+.main-tree {
+  width: 132px;
+  position: absolute;
+  top: -12px;
+  left: 56px;
+}
+
+img {
+  /* IE, only works on <img> tags */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* Firefox */
+  image-rendering: crisp-edges;
+  /* Chromium + Safari */
+  image-rendering: pixelated;
+}

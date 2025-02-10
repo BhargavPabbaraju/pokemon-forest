@@ -1,0 +1,39 @@
+:root {
+  --dark-green-0: #50c880;
+
+  --light-green-0: #a8e0b8;
+  --light-green-2: #90d8a8;
+  --bg-green-0: #80d098;
+  --foreground-0: #60c888;
+  --foreground-1: #48b070;
+  --foreground-2: #38b870;
+  --foreground-3: #29633f;
+}
+
+body {
+  font-size: large;
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+  margin: 0;
+  background: var(--bg-green-0);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+#menu-icon-close {
+  display: none;
+}
+
+header {
+  background-color: var(--dark-green-0);
+  color: var(--foreground-3);
+  padding: 8px;
+  font-size: large;
+  max-height: 32px;
+}
