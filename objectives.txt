@@ -1,0 +1,90 @@
+# Pokemon forest app
+
+# Functionalities
+- Be able to track how much time focused (per day, week, month, year)
+- Be able to save and load states
+- Be able to tag study sessions ("study"/"work"/etc) , have some default and be able to add tags
+- Be able to give a custom color to tags
+- Push notifications upon success, failure
+- Be able to change theme of the app ??? 
+
+
+
+# Plant berries 
+- Select timer for berries (5 min - 120 min in steps of 5 min) // Should we allow custom?
+- Make sure the different berry images scale according to the time
+- Users can select which berry they want to Plant
+- Leaving the app before the timer ends should wither the plant / crack the egg
+    - Closing the app
+    - Minimizing the app
+    - Switching to a different tab?
+- Succesfully planted berries go to bag (berries pocket)
+- Every success gives coins
+
+# Eggs
+- Sometimes berries give out pokemon eggs on successful plants (determine the probability of egg drops)
+- Eggs can be hatched same as berry plant but minimum time to hatch them should be more than 60 mins
+- Show cracks on egg as it progressively hatches
+- Hatched pokemon go to farms
+    - Should farms be static box images with icons? Or 
+    - Moving obverworld pokemon on nxn grids
+        - Movement should not be orthogonal chess rook like , should appear more realistic 
+        - How to handle collisions in movement (should not look like ghosts)
+- Every success gives coins
+
+# Pokedex
+- Show question marks for species you haven't seen
+- Show count for each species you've seen
+
+# Chores
+- Feeding berries to pokemon gives them exp (each berry gives different set amount of XP)
+- Pokemon amie? Take care of pokemon??
+
+
+# Badges 
+- Achievements based on how much time focused, how many eggs obtained, collected all seeds
+- Number of pokemon obtained per type , etc
+
+# Trainer Card
+- Show avatar
+- Show Metrics
+- Show badges
+
+# Levelling up
+- Stay true to original evo methods except overworld , steps ones (Decide what to do with those)
+- Pokemon that evolve by level should level up when they reach that level 
+
+# Shop
+- Buy berry seeds / evolution items for coins 
+- Any other items??
+- Gigantamax / Mega stones (per species) - single use - detachable 
+
+# Poffin making 
+- Mix berries to make poffins 
+- Cooking mini game
+- Give more xp than berries
+
+# Trade pokemon (Requires internet connection and server side storage)
+- Put pokemon up for Trade
+- Make trade offers
+- Accept trade offers
+- Evolve trade pokemon upon trade
+
+
+# Metrics
+- How much time focused(per day, week, month, year) - minutes
+- How many withered plants(per day,week,month,year)
+
+#Decisions
+- Static stuff like berries, pokemon species can be loaded into ram via static files within code
+- Only actual user info should be written and read from files
+
+# Stuff to save
+- pokemon list
+- obtained seeds
+- unhatched eggs
+- berries
+- other items
+- coins
+- focused times
+- tags
