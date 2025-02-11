@@ -1,23 +1,12 @@
 import "../variables.css";
 import "./index.css";
-import berryPotImg from "../../assets/berry_pot.png";
-import treeImg from "../../assets/tree1.apng";
+import berryPotImg from "../../assets/berry_pot_empty.png";
 import { formatTime } from "../utils";
-
-const DEFAULT_TAG = "Study";
-const DEFAULT_STATUS = "Plant a berry";
-const DEFAULT_TIME = 0.5 * 60; // 10 minutes → 600 seconds
-
-const state = {
-  tag: DEFAULT_TAG,
-  status: DEFAULT_STATUS,
-  time: DEFAULT_TIME,
-};
 
 function renderTop() {
   const top = document.createElement("div");
   const status = document.createElement("div");
-  status.innerText = DEFAULT_STATUS;
+  status.innerText = window.gameState.status;
   top.classList.add("main-top");
 
   top.appendChild(status);
@@ -34,7 +23,7 @@ function renderBerryPot() {
   berry.classList.add("main-berry");
 
   const tree = document.createElement("img");
-  tree.src = treeImg;
+  tree.src = window.gameState.berry.images[0];
   tree.setAttribute("id", "tree");
   tree.classList.add("main-tree");
 
@@ -52,7 +41,7 @@ function renderMiddle() {
   berry.appendChild(renderBerryPot());
 
   const tag = document.createElement("div");
-  tag.innerText = DEFAULT_TAG;
+  tag.innerText = window.gameState.tag;
 
   middle.appendChild(berry);
   middle.appendChild(tag);
@@ -65,7 +54,7 @@ function renderBottom() {
   div.classList.add("main-bottom");
 
   const time = document.createElement("div");
-  time.innerText = formatTime(DEFAULT_TIME);
+  time.innerText = formatTime(window.gameState.time);
   time.setAttribute("id", "main-timer");
 
   const plantButton = document.createElement("button");
@@ -90,16 +79,16 @@ export function renderInitialContent() {
 
 function refreshTime() {
   const timer = document.getElementById("main-timer");
-  timer.innerText = formatTime(state.time);
+  timer.innerText = formatTime(window.gameState.time);
 }
 
 function startTimer() {
   let intervalId = setInterval(() => {
-    if (state.time > 0) {
-      state.time -= 1;
+    if (window.gameState.time > 0) {
+      window.gameState.time -= 1;
     } else {
       clearInterval(intervalId);
-      state.time = DEFAULT_TIME;
+      window.gameState.time = window.gameState.default_time;
     }
     refreshTime();
   }, 1000);

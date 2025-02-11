@@ -1,11 +1,6 @@
 @font-face {
   font-family: "PrimaryFont";
-  src: url("../assets/fonts/font1.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "FullWidthFont";
-  src: url("../assets/fonts/font2.woff2") format("woff2");
+  src: url("../assets/font1.woff2") format("woff2");
 }
 
 :root {
