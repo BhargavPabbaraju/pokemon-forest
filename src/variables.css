@@ -1,6 +1,15 @@
+@font-face {
+  font-family: "PrimaryFont";
+  src: url("../assets/fonts/font1.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "FullWidthFont";
+  src: url("../assets/fonts/font2.woff2") format("woff2");
+}
+
 :root {
   --dark-green-0: #50c880;
-
   --light-green-0: #a8e0b8;
   --light-green-2: #90d8a8;
   --bg-green-0: #80d098;
@@ -10,4 +19,21 @@
   --foreground-3: #29633f;
   --pot-bg-1: #e8b038;
   --pot-bg-2: #f8d060;
+
+  --primary-font: "PrimaryFont";
+  --full-width-font: "FullWidthFont";
+}
+
+img,
+body {
+  /* IE, only works on <img> tags */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* Firefox */
+  image-rendering: crisp-edges;
+  /* Chromium + Safari */
+  image-rendering: pixelated;
+}
+
+html {
+  font-size: 8px; /* Base size */
 }

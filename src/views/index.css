@@ -8,8 +8,9 @@
 }
 
 .main-top {
-  background-color: antiquewhite;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .main-middle {
@@ -17,6 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
 
 .main-bottom {
@@ -46,28 +48,21 @@
   top: -32px;
 }
 
-img {
-  /* IE, only works on <img> tags */
-  -ms-interpolation-mode: nearest-neighbor;
-  /* Firefox */
-  image-rendering: crisp-edges;
-  /* Chromium + Safari */
-  image-rendering: pixelated;
-}
-
 .main-timer {
-  font-size: 8rem;
-  padding: 1rem;
+  font-size: 4rem;
+  padding: 2rem;
   color: var(--foreground-3);
+  font-family: var(--full-width-font);
 }
 
 #plant-button {
-  padding: 0.5rem 0.25rem;
-  font-size: 1.2rem;
+  padding: 1rem 0.5rem;
+  font-size: 2rem;
   width: 50%;
   background: var(--light-green-0);
   color: var(--foreground-2);
   border: none;
-  border-bottom: 0.25rem solid var(--dark-green-0);
-  border-radius: 0.5rem;
+  border-bottom: 0.5rem solid var(--dark-green-0);
+  border-radius: 1rem;
+  font-family: var(--primary-font);
 }
