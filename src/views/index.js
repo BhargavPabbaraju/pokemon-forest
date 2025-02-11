@@ -1,12 +1,18 @@
 import "../variables.css";
 import "./index.css";
 import berryPotImg from "../../assets/berry_pot.png";
-import treeImg from "../../assets/tree2.apng";
+import treeImg from "../../assets/tree1.apng";
 import { formatTime } from "../utils";
 
 const DEFAULT_TAG = "Study";
 const DEFAULT_STATUS = "Plant a berry";
-const DEFAULT_TIME = 10 * 60; // 10 minutes → 600 seconds
+const DEFAULT_TIME = 0.5 * 60; // 10 minutes → 600 seconds
+
+const state = {
+  tag: DEFAULT_TAG,
+  status: DEFAULT_STATUS,
+  time: DEFAULT_TIME,
+};
 
 function renderTop() {
   const top = document.createElement("div");
@@ -60,11 +66,12 @@ function renderBottom() {
 
   const time = document.createElement("div");
   time.innerText = formatTime(DEFAULT_TIME);
-  time.classList.add("main-timer");
+  time.setAttribute("id", "main-timer");
 
   const plantButton = document.createElement("button");
   plantButton.setAttribute("id", "plant-button");
   plantButton.innerText = "Plant";
+  plantButton.addEventListener("click", startTimer);
 
   div.appendChild(time);
   div.appendChild(plantButton);
@@ -79,4 +86,21 @@ export function renderInitialContent() {
   content.appendChild(renderTop());
   content.appendChild(renderMiddle());
   content.appendChild(renderBottom());
+}
+
+function refreshTime() {
+  const timer = document.getElementById("main-timer");
+  timer.innerText = formatTime(state.time);
+}
+
+function startTimer() {
+  let intervalId = setInterval(() => {
+    if (state.time > 0) {
+      state.time -= 1;
+    } else {
+      clearInterval(intervalId);
+      state.time = DEFAULT_TIME;
+    }
+    refreshTime();
+  }, 1000);
 }

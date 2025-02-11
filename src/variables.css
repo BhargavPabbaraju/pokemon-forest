@@ -37,3 +37,10 @@ body {
 html {
   font-size: 8px; /* Base size */
 }
+
+body::after {
+  content: ":"; /* Replace 'X' with your character */
+  position: relative;
+  left: -19px;
+  top: -20px;
+}

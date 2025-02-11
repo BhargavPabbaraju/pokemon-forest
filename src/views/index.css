@@ -48,17 +48,18 @@
   top: -32px;
 }
 
-.main-timer {
-  font-size: 4rem;
+#main-timer {
+  font-size: 8rem;
   padding: 2rem;
   color: var(--foreground-3);
-  font-family: var(--full-width-font);
+  font-family: var(--primary-font);
+  /* font-family: var(--full-width-font); */
 }
 
 #plant-button {
   padding: 1rem 0.5rem;
   font-size: 2rem;
-  width: 50%;
+  width: 16rem;
   background: var(--light-green-0);
   color: var(--foreground-2);
   border: none;
