@@ -32,16 +32,13 @@
 .berry-container {
   position: relative;
 }
-
-.main-berry {
+#main-berry-pot {
   width: 288px;
-  /* border-color: var(--pot-bg-2);
-  background-color: var(--pot-bg-1);
-  border: 2px solid var(--pot-bg-2); */
+
   position: relative;
 }
 
-.main-tree {
+#main-tree {
   width: 132px;
   position: absolute;
   left: 44px;

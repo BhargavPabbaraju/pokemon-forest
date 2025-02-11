@@ -1,6 +1,7 @@
 import "../variables.css";
 import "./index.css";
-import berryPotImg from "../../assets/berry_pot_empty.png";
+import berryPotEmptyImg from "../../assets/berry_pot_empty.png";
+import berryPotImg from "../../assets/berry_pot.png";
 import { formatTime } from "../utils";
 
 function renderTop() {
@@ -19,13 +20,12 @@ function renderBerryPot() {
   div.classList.add("berry-container");
 
   const berry = document.createElement("img");
-  berry.src = berryPotImg;
-  berry.classList.add("main-berry");
+  berry.src = berryPotEmptyImg;
+  berry.setAttribute("id", "main-berry-pot");
 
   const tree = document.createElement("img");
-  tree.src = window.gameState.berry.images[0];
-  tree.setAttribute("id", "tree");
-  tree.classList.add("main-tree");
+  tree.setAttribute("id", "main-tree");
+  tree.style.visibility = "hidden";
 
   div.appendChild(berry);
   div.appendChild(tree);
@@ -54,7 +54,7 @@ function renderBottom() {
   div.classList.add("main-bottom");
 
   const time = document.createElement("div");
-  time.innerText = formatTime(window.gameState.time);
+  time.innerText = formatTime(window.gameState.totalTime);
   time.setAttribute("id", "main-timer");
 
   const plantButton = document.createElement("button");
@@ -79,16 +79,34 @@ export function renderInitialContent() {
 
 function refreshTime() {
   const timer = document.getElementById("main-timer");
-  timer.innerText = formatTime(window.gameState.time);
+  timer.innerText = formatTime(window.gameState.currentTime);
+  const tree = document.getElementById("main-tree");
+  const img = window.gameState.berry.currentImage();
+  if (img) {
+    tree.src = img;
+    tree.style.visibility = "visible";
+  }
+}
+
+function clearTime() {
+  window.gameState.currentTime = window.gameState.totalTime;
+  const tree = document.getElementById("main-tree");
+  tree.src = window.gameState.berry.fullImage();
 }
 
 function startTimer() {
+  window.gameState.berry.refreshBerry();
+  const berryPot = document.getElementById("main-berry-pot");
+  berryPot.src = berryPotImg;
+  const tree = document.getElementById("main-tree");
+  tree.style.visibility = "hidden";
+
   let intervalId = setInterval(() => {
-    if (window.gameState.time > 0) {
-      window.gameState.time -= 1;
+    if (window.gameState.currentTime > 0) {
+      window.gameState.currentTime -= 1;
     } else {
       clearInterval(intervalId);
-      window.gameState.time = window.gameState.default_time;
+      clearTime();
     }
     refreshTime();
   }, 1000);
